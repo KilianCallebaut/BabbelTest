@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mrKC1/Documents/GitHub/BabbelTest/app/src/main/res/layout/introduction.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/mrKC1/Documents/GitHub/BabbelTest/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/mrKC1/Documents/GitHub/BabbelTest/app/src/main/res/layout/gamescreen.xml" value="0.22" />
+        <entry key="..\:/Users/mrKC1/Documents/GitHub/BabbelTest/app/src/main/res/layout/introduction.xml" value="0.25" />
       </map>
     </option>
   </component>
