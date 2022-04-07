@@ -95,19 +95,19 @@ class GameScreen: Fragment() {
     }
 
     private fun nextWord(view: View) {
-        progress(view)
-        resetWordPosition(view)
+        progress()
+        resetWordPosition()
 
-        val indexes = fetchWordPairs(view)
+        val indexes = fetchWordPairs()
         _currentWordId = indexes[0]
         _currentPossibleId = indexes[1]
 
-        drawWords(view, _currentWordId, _currentPossibleId)
-        fallWord(view)
+        drawWords( _currentWordId, _currentPossibleId)
+        fallWord()
         timer(view)
     }
 
-    private fun fetchWordPairs(view: View) : List<Int> {
+    private fun fetchWordPairs() : List<Int> {
         val random_index = (0.._word_trans_combos.size-1).random()
 //        val word_to_translate = _word_trans_combos[random_index]
         val possible_translation_index = if ((1..10).random()<=chanceToRandom*10) random_index else (0.._word_trans_combos.size-1).random()
@@ -115,7 +115,7 @@ class GameScreen: Fragment() {
         return listOf<Int>(random_index, possible_translation_index)
     }
 
-    private fun drawWords(view: View, index_to_translate: Int, index_possible_translation: Int) {
+    private fun drawWords(index_to_translate: Int, index_possible_translation: Int) {
         binding.fallingWord.text = _word_trans_combos[index_possible_translation].text_spa
         binding.toTranslate.text = _word_trans_combos[index_to_translate].text_eng
     }
@@ -137,7 +137,7 @@ class GameScreen: Fragment() {
     }
 
     // move word down
-    private fun fallWord(view: View) {
+    private fun fallWord() {
         val possible = binding.fallingWord
         val coordinatesDanger = IntArray(2)
         binding.dangerZone.getLocationInWindow(coordinatesDanger)
@@ -151,7 +151,7 @@ class GameScreen: Fragment() {
         }
     }
 
-    private fun resetWordPosition(view: View) {
+    private fun resetWordPosition() {
         val possible = binding.fallingWord
         ObjectAnimator.ofFloat(possible, "translationY", 0f).apply{
             duration = 0
@@ -176,7 +176,7 @@ class GameScreen: Fragment() {
 
     // progress
 
-    private fun progress(view: View) {
+    private fun progress() {
         binding.progressBar2.progress = _responses.responses.size +1
         if (_responses.responses.size >= amount_q) {
             findNavController().navigate(R.id.action_GameScreen_to_Results)

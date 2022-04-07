@@ -32,9 +32,13 @@ class Results: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.resultsTable.weightSum = (_responses.size()+0.5).toFloat()
-        for(resp in _responses.responses) {
-            writeResult(view, resp)
-        }
+        Thread(Runnable {
+            for(resp in _responses.responses) {
+                writeResult(view, resp)
+            }
+        }).start()
+
+
     }
 
     override fun onDestroyView() {
@@ -54,6 +58,8 @@ class Results: Fragment() {
             row.setBackgroundColor(ContextCompat.getColor(view.context, R.color.red))
         }
 
-        binding.resultsTable.addView(row)
+        binding.resultsTable.post {
+            binding.resultsTable.addView(row)
+        }
     }
 }
