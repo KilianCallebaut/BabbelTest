@@ -6,4 +6,7 @@
     <string name="introduction_header">Word Tumbler</string>
     <string name="introduction_body">Welcome to word tumbler. \n \n In this game, a word or phrase is given, after which a possible translation falls down on the screen. Push the left button if you think the translation is correct, push right if you think if it is wrong. \n \n After 7 words, you will see the results of your series.</string>
     <string name="startbutton">Start the game</string>
+
+    <string name="rightbutton">Right</string>
+    <string name="wrongbutton">Wrong</string>
 </resources>
