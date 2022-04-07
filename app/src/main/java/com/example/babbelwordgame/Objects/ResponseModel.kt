@@ -3,9 +3,9 @@ package com.example.babbelwordgame.Objects
 import androidx.lifecycle.ViewModel
 
 
-data class Response(val possible: Translation?, val correct: Translation, val answer: Boolean){
+data class Response(val possible: Translation, val correct: Translation, val answer: Boolean?){
     fun isCorrect() : Boolean {
-        return if (answer) possible == correct else possible != correct
+        return if (answer == true) possible == correct else possible != correct
     }
 }
 

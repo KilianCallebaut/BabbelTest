@@ -21,6 +21,9 @@
         android:name="com.example.babbelwordgame.GameScreen"
         android:label="@string/gamescreen_label"
         tools:layout="@layout/gamescreen">
+        <action
+            android:id="@+id/action_GameScreen_to_Results"
+            app:destination="@id/FragmentResults" />
 
     </fragment>
 
