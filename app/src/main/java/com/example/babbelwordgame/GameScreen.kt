@@ -80,7 +80,7 @@ class GameScreen: Fragment() {
         return gson.fromJson(jsonString, translationListType)
     }
 
-    fun getJsonDataFromAsset(context: Context, fileName: String): String? {
+    private fun getJsonDataFromAsset(context: Context, fileName: String): String? {
         val jsonString: String
         try {
             jsonString = context.assets.open(fileName).bufferedReader().use {
