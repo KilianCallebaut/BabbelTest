@@ -7,13 +7,29 @@
 
     <fragment
         android:id="@+id/FragmentIntroduction"
-        android:name="com.example.babbelwordgame."
+        android:name="com.example.babbelwordgame.Introduction"
         android:label="@string/introduction_label"
         tools:layout="@layout/introduction">
 
-<!--        <action-->
-<!--            android:id="@+id/action_FirstFragment_to_SecondFragment"-->
-<!--            app:destination="@id/SecondFragment" />-->
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/FragmentGameScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentGameScreen"
+        android:name="com.example.babbelwordgame.GameScreen"
+        android:label="@string/gamescreen_label"
+        tools:layout="@layout/gamescreen">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentResults"
+        android:name="com.example.babbelwordgame.Results"
+        android:label="@string/results_label"
+        tools:layout="@layout/result_screen">
+
     </fragment>
 
 </navigation>

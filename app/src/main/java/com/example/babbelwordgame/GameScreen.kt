@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.babbelwordgame.databinding.GamescreenBinding
 import com.example.babbelwordgame.databinding.IntroductionBinding
 
-class Introduction : Fragment() {
+class GameScreen: Fragment() {
 
-    private var _binding: IntroductionBinding? = null
+    private var _binding: GamescreenBinding? = null
     private val binding get() = _binding!!
-
 
 
     override fun onCreateView(
@@ -20,7 +20,7 @@ class Introduction : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = IntroductionBinding.inflate(inflater, container, false)
+        _binding = GamescreenBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -28,9 +28,6 @@ class Introduction : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.startgamescreenbutton.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
     }
 
     override fun onDestroyView() {

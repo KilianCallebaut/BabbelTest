@@ -5,14 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.babbelwordgame.databinding.IntroductionBinding
+import com.example.babbelwordgame.databinding.ResultScreenBinding
 
-class Introduction : Fragment() {
-
-    private var _binding: IntroductionBinding? = null
+class Results: Fragment() {
+    private var _binding: ResultScreenBinding? = null
     private val binding get() = _binding!!
-
 
 
     override fun onCreateView(
@@ -20,7 +17,7 @@ class Introduction : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = IntroductionBinding.inflate(inflater, container, false)
+        _binding = ResultScreenBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -28,9 +25,6 @@ class Introduction : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.startgamescreenbutton.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
     }
 
     override fun onDestroyView() {
