@@ -79,7 +79,6 @@
             android:backgroundTint="#F1660A"
             android:fontFamily="sans-serif-black"
             android:gravity="center"
-            android:text="TextView"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

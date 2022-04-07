@@ -11,4 +11,9 @@
 
     <string name="rightbutton">Right</string>
     <string name="wrongbutton">Wrong</string>
+
+    <string name="coloriginal">Word</string>
+    <string name="colgiven">Given translation</string>
+    <string name="colcorrect">Correct translation</string>
+    <string name="colanswer">Given answer</string>
 </resources>

@@ -49,8 +49,12 @@ class GameScreen: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _word_trans_combos = readData(view)
+        _responses.reset_responses()
         binding.progressBar2.max = amount_q
+        binding.progressBar2.progress = 0
         binding.timerBar.max = duration_ms
+        binding.timerBar.progress = 0
+
         binding.startgamebutton.setOnClickListener{
             startButton(view)
         }
